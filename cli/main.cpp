@@ -17,12 +17,8 @@ int main() {
 
         std::string command;
         std::getline(std::cin, command);
-
-        if(command == "quit") {
+        if(!game.exec(command)) {
             break;
-        } else if(command == "version") {
-            print_version();
-            print_author();
         }
 
         print_newline();
