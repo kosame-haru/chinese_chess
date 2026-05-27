@@ -1,14 +1,14 @@
 #include <iostream>
-#include "./include/statusline.h"
-#include "./include/version.h"
+#include "include/game.h"
+#include "include/version.h"
 
 void print_status();
 
-void print_statusline() {
+void Game::print_statusline() {
     print_status();
     print_version();
 }
 
-void print_status() {
+void Game::print_status() {
     std::cout << "<NO PLAYING> ";
 }

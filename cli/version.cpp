@@ -1,5 +1,5 @@
 #include <iostream>
-#include "./include/version.h"
+#include "include/version.h"
 
 void print_version() {
     std::cout << "Chinese Chess v" << VERSION_NUMBER << "." << SUBVER_NUMBER;

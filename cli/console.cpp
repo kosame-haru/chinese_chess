@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include "./include/console.h"
+#include "include/console.h"
 
 void init_codepage() {
     system("chcp 65001");
