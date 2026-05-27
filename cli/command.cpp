@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include <string>
 #include <vector>
 #include "include/game.h"
@@ -23,13 +21,6 @@ bool Game::process(std::vector<std::string> &args) {
     } else if(main_cmd == "version") {
         print_version();
         print_author();
-    } else {
-        int size = args.size();
-        std::cout << "argc = " << size << std::endl;
-
-        for(int i = 0; i < size; i++) {
-            std::cout << "argv[" << i << "] = \"" << args[i] << "\"" << std::endl; 
-        }
     }
 
     return true;
