@@ -6,7 +6,7 @@
 class Piece {
 public:
     Piece() : color(PIECE_COLOR::INVALID), type(PIECE_TYPE::INVALID) {};
-    Piece(const PIECE_COLOR color, const PIECE_TYPE type) : color(color), type(type) {};
+    Piece(PIECE_COLOR color, PIECE_TYPE type) : color(color), type(type) {};
 
     bool is_red() {
         return color == PIECE_COLOR::RED;

@@ -12,7 +12,7 @@ constexpr int BOARD_HEIGHT = 10;
 
 class Board {
 public:
-    static bool is_valid_coord(const Coord coord) {
+    static bool is_valid_coord(Coord coord) {
         if(coord.x < 0 || coord.x > BOARD_WIDTH) {
             return false;
         }
@@ -24,7 +24,7 @@ public:
         return true;
     }
 
-    std::optional<Piece> get_piece(const Coord coord) {
+    std::optional<Piece> get_piece(Coord coord) {
         if(!Board::is_valid_coord(coord)) {
             return std::nullopt;
         }
@@ -33,7 +33,7 @@ public:
         return {piece};
     }
 
-    bool set_piece(const Coord coord, const Piece piece) {
+    bool set_piece(Coord coord, Piece piece) {
         if(!Board::is_valid_coord(coord)) {
             return false;
         }
@@ -50,7 +50,7 @@ public:
         }
     }
 
-    bool move_piece(const Coord prev, const Coord past) {
+    bool move_piece(Coord prev, Coord past) {
         auto piece_opt = get_piece(prev);
         if(!piece_opt) {
             return false;
