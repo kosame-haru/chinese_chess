@@ -42,14 +42,6 @@ public:
         return true;
     }
 
-    void clear_board() {
-        for(int x = 0; x < 9; x++) {
-            for(int y = 0; y < 10; y++) {
-                set_piece(Coord(x,y), Piece());
-            }
-        }
-    }
-
     bool move_piece(Coord prev, Coord past) {
         auto piece_opt = get_piece(prev);
         if(!piece_opt) {
@@ -66,7 +58,10 @@ public:
         return true;
     }
 
+    void init();
+
 private:
-    std::array<std::array<Piece, 10>, 9> pieces; 
+    std::array<std::array<Piece, BOARD_HEIGHT>, BOARD_WIDTH> pieces; 
     PIECE_COLOR side_to_move = PIECE_COLOR::RED;
+    int steps = 0;
 };

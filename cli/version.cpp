@@ -7,5 +7,5 @@ void print_version() {
 }
 
 void print_author() {
-    std::cout << "Author: " << AUTHOR << std::endl;
+    std::cout << "作者：" << AUTHOR << std::endl;
 }

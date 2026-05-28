@@ -24,5 +24,6 @@ private:
 
     Board board;
     bool is_playing = false;
+    bool is_board_reversed = false;
     GAME_STATUS status = GAME_STATUS::NO_PLAYING;
 };

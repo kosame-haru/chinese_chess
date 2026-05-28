@@ -24,6 +24,8 @@ bool Game::process(std::vector<std::string> &args) {
     } else if(main_cmd == "version") {
         print_version();
         print_author();
+    } else {
+        std::cout << "您输入了错误的命令。" << std::endl;
     }
 
     return true;
@@ -41,6 +43,7 @@ bool Game::cmd_quit() {
     if(confirm == "yes") {
         is_playing = false;
         status = GAME_STATUS::NO_PLAYING;
+        board = Board();
     }
     return true;
 }
@@ -59,11 +62,12 @@ void Game::cmd_start(std::vector<std::string> &args) {
     }
 
     is_playing = true;
-    // board.init();
+    board.init();
+
     if(config == "2p") {
         status = GAME_STATUS::PLAYING_2P;
     } else {
         is_playing = false;
-        std::cout << "命令格式：start [2p/1p/1plv1/1plv2/1plv3]" << std::endl;
+        std::cout << "命令格式：start [2p/1p/1plv1/1plv2/1plv3] [red/black]" << std::endl;
     }
 }
