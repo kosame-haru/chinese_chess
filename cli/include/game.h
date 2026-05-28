@@ -14,6 +14,7 @@ class Game {
 public:
     void print_statusline();
     bool exec(std::string &command);
+    void print_board();
 
 private:
     void print_status();
@@ -21,6 +22,9 @@ private:
 
     bool cmd_quit();
     void cmd_start(std::vector<std::string> &args);
+
+    void print_board_regular();
+    void print_board_reversed();
 
     Board board;
     bool is_playing = false;

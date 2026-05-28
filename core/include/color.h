@@ -1,6 +1,6 @@
 #pragma once
 
-enum PIECE_COLOR {
+enum class PIECE_COLOR {
     RED,
     BLACK,
     INVALID

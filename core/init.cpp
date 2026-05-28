@@ -22,4 +22,9 @@ void Board::init() {
     set_piece(Coord(7,2), Piece(PIECE_COLOR::BLACK, PIECE_TYPE::CANNON));
     set_piece(Coord(1,7), Piece(PIECE_COLOR::RED, PIECE_TYPE::CANNON));
     set_piece(Coord(7,7), Piece(PIECE_COLOR::RED, PIECE_TYPE::CANNON));
+
+    for(int i = 0; i < 5; i++) {
+        set_piece(Coord(i*2,3), Piece(PIECE_COLOR::BLACK, PIECE_TYPE::PAWN));
+        set_piece(Coord(i*2,6), Piece(PIECE_COLOR::RED, PIECE_TYPE::PAWN));
+    }
 }

@@ -20,6 +20,10 @@ public:
         return color == PIECE_COLOR::INVALID;
     }
 
+    PIECE_COLOR get_color() {
+        return color;
+    }
+
     PIECE_TYPE get_type() {
         return type;
     }

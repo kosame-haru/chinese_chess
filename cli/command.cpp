@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 #include "include/game.h"
 #include "include/split.h"
 #include "include/version.h"
@@ -62,6 +63,7 @@ void Game::cmd_start(std::vector<std::string> &args) {
     }
 
     is_playing = true;
+    is_board_reversed = false;
     board.init();
 
     if(config == "2p") {
@@ -69,5 +71,9 @@ void Game::cmd_start(std::vector<std::string> &args) {
     } else {
         is_playing = false;
         std::cout << "命令格式：start [2p/1p/1plv1/1plv2/1plv3] [red/black]" << std::endl;
+    }
+
+    if(is_playing == true) {
+        print_board();
     }
 }
