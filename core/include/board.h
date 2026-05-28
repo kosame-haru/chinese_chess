@@ -73,6 +73,14 @@ public:
         return true;
     }
 
+    int get_steps() {
+        return steps;
+    }
+
+    PIECE_COLOR get_side_to_move() {
+        return side_to_move;
+    }
+
     void init();
 
 private:

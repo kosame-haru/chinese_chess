@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+#include "../core/include/board.h"
+#include "include/console.h"
 #include "include/game.h"
 #include "include/split.h"
 #include "include/version.h"
@@ -18,8 +20,14 @@ bool Game::process(std::vector<std::string> &args) {
     }
 
     std::string main_cmd = args[0];
-    if(main_cmd == "quit") {
+    if(main_cmd == "board") {
+        cmd_board();
+    } else if(main_cmd == "clear") {
+        clear_screen();
+    } else if(main_cmd == "quit") {
         return cmd_quit();
+    } else if(main_cmd == "reverse") {
+        cmd_reverse();
     } else if(main_cmd == "start") {
         cmd_start(args);
     } else if(main_cmd == "version") {
@@ -30,6 +38,15 @@ bool Game::process(std::vector<std::string> &args) {
     }
 
     return true;
+}
+
+void Game::cmd_board() {
+    if(!is_playing) {
+        std::cout << "对局尚未开始！" << std::endl;
+        return;
+    }
+
+    print_board();
 }
 
 bool Game::cmd_quit() {
@@ -47,6 +64,16 @@ bool Game::cmd_quit() {
         board = Board();
     }
     return true;
+}
+
+void Game::cmd_reverse() {
+    if(!is_playing) {
+        std::cout << "对局尚未开始！" << std::endl;
+        return;
+    }
+
+    is_board_reversed = !is_board_reversed;
+    print_board();
 }
 
 void Game::cmd_start(std::vector<std::string> &args) {
