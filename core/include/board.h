@@ -13,11 +13,11 @@ constexpr int BOARD_HEIGHT = 10;
 class Board {
 public:
     static bool is_valid_coord(Coord coord) {
-        if(coord.x < 0 || coord.x > BOARD_WIDTH) {
+        if(coord.x < 0 || coord.x >= BOARD_WIDTH) {
             return false;
         }
 
-        if(coord.y < 0 || coord.y > BOARD_HEIGHT) {
+        if(coord.y < 0 || coord.y >= BOARD_HEIGHT) {
             return false;
         }
 

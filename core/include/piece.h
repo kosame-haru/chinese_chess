@@ -20,6 +20,10 @@ public:
         return color == PIECE_COLOR::INVALID;
     }
 
+    bool is_equal(Piece piece) {
+        return color == piece.color && type == piece.type;
+    }
+
     PIECE_COLOR get_color() {
         return color;
     }

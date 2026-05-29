@@ -31,7 +31,7 @@ void Game::print_status() {
                 std::cout << "INVALID";
         }
 
-        std::cout << "@step " << board.get_steps() << "> ";
+        std::cout << "%step " << board.get_steps() << "> ";
     } else {
         std::cout << "<NO PLAYING> ";
     }

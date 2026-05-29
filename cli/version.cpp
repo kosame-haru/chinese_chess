@@ -3,7 +3,7 @@
 
 void print_version() {
     std::cout << "Chinese Chess v" << VERSION_NUMBER << "." << SUBVER_NUMBER;
-    std::cout << ", build " << BUILD_NUMBER << " (" << STAGE << ")" << std::endl;
+    std::cout << ", build " << BUILD_NUMBER << " (" << STAGE << "), 2026" << std::endl;
 }
 
 void print_author() {

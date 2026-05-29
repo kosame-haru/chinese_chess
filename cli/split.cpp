@@ -5,7 +5,7 @@
 std::string trim_command(std::string &command);
 std::vector<std::string> split_trimed_command(std::string &command);
 
-std::vector<std::string> split_command(std::string command) {
+std::vector<std::string> split_command(std::string &command) {
     std::string trimed_command = trim_command(command);
     return split_trimed_command(trimed_command);
 }

@@ -3,6 +3,9 @@
 #include <vector>
 
 #include "../core/include/board.h"
+#include "../core/include/move.h"
+#include "../core/include/move_checker.h"
+#include "../core/include/move_format.h"
 #include "include/console.h"
 #include "include/game.h"
 #include "include/split.h"
@@ -20,7 +23,9 @@ bool Game::process(std::vector<std::string> &args) {
     }
 
     std::string main_cmd = args[0];
-    if(main_cmd == "board") {
+    if(main_cmd == "all_moves") {
+        cmd_all_moves();
+    } else if(main_cmd == "board") {
         cmd_board();
     } else if(main_cmd == "clear") {
         clear_screen();
@@ -34,10 +39,25 @@ bool Game::process(std::vector<std::string> &args) {
         print_version();
         print_author();
     } else {
-        std::cout << "您输入了错误的命令。" << std::endl;
+        std::cout << "您输入了错误的命令。请输入 help 命令查看帮助。" << std::endl;
     }
 
     return true;
+}
+
+void Game::cmd_all_moves() {
+    if(!is_playing) {
+        std::cout << "对局尚未开始！" << std::endl;
+        return;
+    }
+
+    MoveChecker move_checker = MoveChecker(board);
+    std::vector<Move> all_moves = move_checker.generate_all_moves(board.get_side_to_move());
+
+    for(Move move : all_moves) {
+        std::cout << move_encode(move) << " ";
+    }
+    std::cout << std::endl;
 }
 
 void Game::cmd_board() {
