@@ -16,27 +16,31 @@ void Game::print_statusline() {
 
 void Game::print_status() {
     if(is_playing) {
-        std::cout << "<";
-
-        switch(board.get_side_to_move()) {
-            case PIECE_COLOR::RED:
-                std::cout << "RED";
-                break;
-
-            case PIECE_COLOR::BLACK:
-                std::cout << "BLACK";
-                break;
-
-            default:
-                std::cout << "INVALID";
-        }
-
-        std::cout << "%step " << board.get_steps() << "> ";
+        print_status_playing();
     } else {
         std::cout << "<NO PLAYING> ";
     }
 }
 
+void Game::print_status_playing() {
+    std::cout << "<";
+
+    switch(board.get_side_to_move()) {
+        case PIECE_COLOR::RED:
+            std::cout << "RED";
+            break;
+
+        case PIECE_COLOR::BLACK:
+            std::cout << "BLACK";
+            break;
+
+        default:
+            std::cout << "INVALID";
+    }
+
+    std::cout << "%step " << board.get_steps() << "> ";
+}
+
 void Game::print_status2() {
-    std::cout << "INIT (playing)" << std::endl;
+    std::cout << "INIT" << std::endl;
 }

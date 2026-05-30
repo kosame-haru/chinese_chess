@@ -3,8 +3,11 @@
 ***
 ### 编译 CLI 版本
 操作系统：Windows 10 / 11 
+
 编译器：g++ (MinGW) 
+
 编译命令：`make cli` 
+
 生成文件：`cchess_cli.exe` 
 ***
 ### 清理生成文件

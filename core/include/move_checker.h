@@ -19,9 +19,13 @@ public:
 
     std::vector<Move> generate_all_moves(PIECE_COLOR color);
 private:
+    std::vector<Move> generate_all_moves_raw(PIECE_COLOR color);
+
     std::vector<Move> generate_rook_moves(Coord coord);
+    std::vector<Move> generate_cannon_moves(Coord coord);
 
     MOVE_STATUS rook_move_checker(Coord coord, MOVE_STATUS status);
+    MOVE_STATUS cannon_move_checker(Coord coord, MOVE_STATUS status);
 
     Board board;
 };

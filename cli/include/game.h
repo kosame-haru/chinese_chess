@@ -18,9 +18,10 @@ public:
 
 private:
     void print_status();
+    void print_status_playing();
     void print_status2();
+    
     bool process(std::vector<std::string> &args);
-
     void cmd_all_moves();
     void cmd_board();
     bool cmd_quit();
